@@ -63,4 +63,10 @@ db.queryAll({key: value, ...}, (err, data) => {
 });
 ```
 
-### remove(entry)
+### remove(entries)
+This functoin enables you to first query your database and then the found object will disappear from your locale database.
+
+`entries: object` →
+```javascript
+db.remove({key: value, ...});
+```
