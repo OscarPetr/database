@@ -46,7 +46,7 @@ This function enables you to query your local database with one or more passed e
 
 `entries: object` → Queries your locale database with one or more entries passed as an argument.
 
-`callback: function(err, data)` → If your query was not successful, the *err* parameter will inform you in your project console. On the other hand if your query was successful, your can work with the parameter *data* further in your callback function. The parameter *data* will only return the first one found in you database.
+`callback: function(err, data)` → If your query was not successful, the *err* parameter will inform you in your project console. On the other hand if your query was successful, your can work with the parameter *data* further in your callback function. The parameter *data* will only return the first found object in you database.
 
 ```javascript
 db.query({key: value, ...}, (err, data) => {
@@ -62,3 +62,5 @@ db.queryAll({key: value, ...}, (err, data) => {
   // your after-query syntax
 });
 ```
+
+### remove(entry)
