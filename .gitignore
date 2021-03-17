@@ -1,5 +1,5 @@
 /node_modules
 /public
-/lib/main.js
+/lib
 app.js
 db.json

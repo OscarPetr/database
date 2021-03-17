@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {generate} = require('./general');
+const { generate } = require('./general');
 
 class Dababase {
     filepath: string;
@@ -135,6 +135,46 @@ class Dababase {
             });
         });
     }
+
+    // UPDATEALL METHOD
+    updateAll(from: object, to: object, callback: (err: Error) => void) {
+
+    }
+
+    // MOVE METHOD
+    move(path: string, callback: (err: Error) => void) {
+        var old = this.source;
+
+        this.filepath = `${path}/${this.filepath}`;
+        this.source = `${process.cwd()}/${this.filepath}`;
+
+        fs.rename(old, this.source, (err: Error) => {
+            if (err) throw err;
+
+            callback(err);
+        });
+    }
+
+    // RENAME METHOD
+    rename(filename: string, callback: (err: Error) => void) {
+        var old = this.source;
+
+        this.filepath = filename;
+        this.source = `${process.cwd()}/${this.filepath}`;
+
+        fs.rename(old, this.source, (err: Error) => {
+            if (err) throw err;
+
+            callback(err);
+        });
+    }
+
+    // CLONE METHOD
+    clone(path: string, callback: (err: Error) => void) {
+        fs.copyFile(this.source, `${path}/${this.filepath}`, (err: Error) => {
+            callback(err);
+        });
+    }
 }
 
-module.exports = Dababase;
+export = Dababase;

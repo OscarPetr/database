@@ -1,6 +1,3 @@
-declare const fs: any;
-declare const path: any;
-declare const generate: any;
 declare class Dababase {
     filepath: string;
     idUsage: boolean;
@@ -16,4 +13,9 @@ declare class Dababase {
     remove(entry: object, callback: (err: Error) => void): void;
     removeAll(entries: object, callback: (err: Error) => void): void;
     update(from: object, to: object, callback: (err: Error) => void): void;
+    updateAll(from: object, to: object, callback: (err: Error) => void): void;
+    move(path: string, callback: (err: Error) => void): void;
+    rename(filename: string, callback: (err: Error) => void): void;
+    clone(path: string, callback: (err: Error) => void): void;
 }
+export = Dababase;
