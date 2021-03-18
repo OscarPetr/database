@@ -92,6 +92,8 @@ db.remove({key: value, ...});
 
 ### clone(filepath, callback)
 
+## **Functions**
+
 ### size(type, callback)
 
 ### props(callback)
