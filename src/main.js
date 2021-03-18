@@ -148,5 +148,23 @@ class Dababase {
             callback(err);
         });
     }
+    // SIZE FUNCTION
+    size(type, callback) {
+        fs.stat(this.source, { bigint: false }, (err, stats) => {
+            var size = stats.size;
+            switch (type) {
+                case 'KB':
+                    size = size / 1000;
+                    break;
+                case 'MB':
+                    size = size / 1000000;
+                case 'GB':
+                    size = size / 1000000000;
+                case 'TB':
+                    size = size / 1000000000000;
+            }
+            callback(err, size);
+        });
+    }
 }
 module.exports = Dababase;
